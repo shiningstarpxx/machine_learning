@@ -1,6 +1,6 @@
 git_repository(
     name = "com_github_gflags_gflags",
-    commit = "e9487086dac46ad96b429ead7ef31c475a7e1154",
+    commit = "30dbc81fb5ffdc98ea9b14b1918bfe4e8779b26e",
     remote = "https://github.com/gflags/gflags.git",
 )
 
