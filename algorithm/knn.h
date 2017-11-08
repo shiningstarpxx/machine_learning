@@ -10,6 +10,8 @@
 #include <map>
 #include <vector>
 
+#include "gtest/gtest.h"
+
 namespace advanced_algorithm {
 
 // input: file, process type (classfication, evaluation), k, to-value vector
