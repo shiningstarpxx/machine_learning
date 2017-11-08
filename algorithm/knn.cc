@@ -10,6 +10,9 @@
 
 #include <complex>
 
+#include <gflags/gflags.h>
+// #include "glog/logging.h"
+
 namespace advanced_algorithm {
 
 void KNN::CalcDistance() {
