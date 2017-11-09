@@ -13,7 +13,7 @@
 #include <gflags/gflags.h>
 // #include "glog/logging.h"
 
-namespace advanced_algorithm {
+namespace algorithm {
 
 void KNN::CalcDistance() {
   if (input_value_ == nullptr) {

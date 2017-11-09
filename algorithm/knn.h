@@ -13,7 +13,7 @@
 #include "gtest/gtest.h"
 #include "glog/logging.h"
 
-namespace advanced_algorithm {
+namespace algorithm {
 
 // input: file, process type (classfication, evaluation), k, to-value vector
 // file content:  x1, x2, ... xn, y1
@@ -39,6 +39,10 @@ class KNN {
   std::vector<Vector> sample_data_;
   std::multimap<double, Vector> distance_data_;
   Vector* input_value_;
+
+  FRIEND_TEST(KNNTest, ParseFileTest);
+  FRIEND_TEST(KNNTest, CalcDistanceTest);
+  FRIEND_TEST(KNNTest, FindNearestKNeighborsTest);
 };
 }
 #endif  // ALGORITHM_KNN_H_
