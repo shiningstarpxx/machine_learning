@@ -12,3 +12,24 @@
 // Created:  11/12/2017 14:36:58
 // Author:  michaelpei (Pei Xingxin), xingxinpei@gmail.com
 
+#ifndef ALGORITHM_ID3_H_
+#define ALGORITHM_ID3_H_
+
+#include <vector>
+
+namespace algorithm {
+
+class Node {
+ private:
+  int choice_;
+  double probability_;
+};
+
+class ID3 {
+ private:
+  double CalcOriginEntropy(const std::vector<int>& result);
+};
+}
+#endif
+
+
