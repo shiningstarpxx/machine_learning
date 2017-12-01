@@ -33,3 +33,18 @@ cc_test(
     '@gtest//:main',
   ],
   )
+
+cc_test(
+  name = 'id3_test',
+  srcs = ['id3_test.cc'],
+  copts = ["-Iexternal/gtest/include"],
+  deps = [
+    ':id3',
+    '@gtest//:main',
+  ],
+  )
+
+cc_binary(
+  name = 'function_test',
+  srcs = ['function_test.cc'],
+  )

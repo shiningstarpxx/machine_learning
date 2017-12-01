@@ -1,6 +1,6 @@
 // Copyright (c) 2017, Pei Xingxin
 // Filename:  ID3.cc
-// Description:  
+// Description:
 // Created:  11/23/2017 19:37:27
 // Author:  michaelpei (Pei Xingxin), xingxinpei@gmail.com
 
@@ -19,7 +19,7 @@ static double CalcClassfiEntropy(
   for (auto it = classfi.begin(); it != classfi.end(); ++it) {
     sum += it->second / size * log2(it->second / size);
   }
-  return sum;
+  return -sum;
 }
 
 double ID3::CalcOriginEntropy(const std::vector<int>& result) {
@@ -34,4 +34,30 @@ double ID3::CalcOriginEntropy(const std::vector<int>& result) {
   return CalcClassfiEntropy(classfication, result.size());
 }
 
+double ID3::CalcSubCategoryEntropy(
+    const std::vector<ID3Node>& rows, int index) {
+  // 第一层，先确定有几个分类
+  std::map<int, int> classfication;
+  for (const auto& d : rows) {
+    if (index < d.property.size()) {
+      int tmp = d.property[index];
+      if (classfication.find(tmp) == classfication.end()) {
+        classfication.insert(std::make_pair(tmp, 1));
+      } else {
+        classfication[tmp]++;
+      }
+    }
+  }
+
+  double sum = 0.0;
+  for (auto it = classfication.begin(); it != classfication.end(); ++it) {
+    std::map<int, int> category;
+    for (const auto& d: rows) {
+
+    }
+  }
+  return CalcClassfiEntropy(classfication, rows.size());
 }
+
+}  // namespace algorithm
+

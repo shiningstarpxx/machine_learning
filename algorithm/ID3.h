@@ -17,19 +17,24 @@
 
 #include <vector>
 
+#include "gtest/gtest.h"
+
 namespace algorithm {
 
-class Node {
- private:
-  int choice_;
-  double probability_;
+struct ID3Node {
+  std::vector<int> property;
+  int category;
 };
 
 class ID3 {
  private:
   double CalcOriginEntropy(const std::vector<int>& result);
+  double CalcSubCategoryEntropy(const std::vector<ID3Node>& rows, int index);
+
+  FRIEND_TEST(ID3Test, CalcOriginEntropy);
+  FRIEND_TEST(ID3Test, CalcSubCategoryEntropy);
 };
-}
-#endif
+}  // namespace algorithm
+#endif  // ALGORITHM_H_
 
 
